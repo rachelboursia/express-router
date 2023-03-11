@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
     res.json(foundFruits)
 });
 
-router.post('/', [check('color').not().isEmpty().trim()], async (req, res) => {
+router.post('/', [check("color").not().isEmpty().trim()], async (req, res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
         res.json({error: errors.array()});
